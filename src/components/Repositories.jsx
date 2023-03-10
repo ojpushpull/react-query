@@ -5,17 +5,13 @@ import { useQuery } from "react-query";
 export default function Repositories() {
     const { isLoading, isError, data, error, refetch } = useQuery(["repo"], () =>
     axios
-        .get("https://api.github.com/users/eunit99/repos")
+        .get("https://ephemeral-tapioca-4abd88.netlify.app/nytreats.json")
         .then((res) => res.data)
         );
 
-        if (isLoading) return "Loadinng...";
-
-        if(error) return "An error has occurred: " + error.message;
-
         console.log(data)
 
-        return (
+        /* return (
             <>
             {data.map(repo => {
                 return (
@@ -39,4 +35,5 @@ export default function Repositories() {
             </>
         );
 
-    };
+    }; */
+  }
